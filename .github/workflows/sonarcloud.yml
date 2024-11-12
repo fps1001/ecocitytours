@@ -55,4 +55,4 @@ jobs:
             -Dsonar.projectKey=fps1001_ecocitytours\
             -Dsonar.sources=. \
             -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.coverageReportPaths=coverage/lcov.info
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
