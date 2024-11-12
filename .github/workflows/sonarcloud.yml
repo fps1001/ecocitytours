@@ -28,6 +28,13 @@ jobs:
       #4 Install Dependencies
       - name: Install Dependencies
         run: flutter pub get
+      # Crear archivo .env temporal
+      - name: Crear archivo .env desde secretos
+        run: |
+            echo "GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }}" >> .env
+            echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
+            echo "GOOGLE_DIRECTIONS_API_KEY=${{ secrets.GOOGLE_DIRECTIONS_API_KEY }}" >> .env
+            echo "GOOGLE_PLACES_API_KEY=${{ secrets.GOOGLE_PLACES_API_KEY }}" >> .env
       #5 Run flutter tests
       - name: Run Flutter Tests
         run: flutter test --coverage
